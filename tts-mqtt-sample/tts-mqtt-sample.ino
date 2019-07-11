@@ -68,6 +68,7 @@ public:
     if (WireI2C.requestFrom(N2TTS::I2C_ADDRESS,4) != 4) {
       return -1;
     }
+    delay(1);
     int32_t val=0;
     ((uint8_t*)&val)[0] = WireI2C.read();
     ((uint8_t*)&val)[1] = WireI2C.read();

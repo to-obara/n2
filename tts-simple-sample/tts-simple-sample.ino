@@ -56,6 +56,7 @@ public:
   int GetParam(uint8_t cmd) const
   {
     this->begin_cmd(cmd)->end_cmd();
+    delay(1);
     if (WireI2C.requestFrom(N2TTS::I2C_ADDRESS,4) != 4) {
       return -1;
     }
